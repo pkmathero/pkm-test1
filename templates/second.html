@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- script -->
+<script type="module" src="{{ url_for('static', filename='script.js')}}"></script>
+<!-- script -->
+<a href="http://127.0.0.1:5000/">
+    <button>HOME</button>
+</a>
+<h2>Masukkan Data</h2>
+<div class="Kelamin">
+    <h4>Jenis Kelamin</h4>
+    <form id="formGender">
+        <label>
+            <input type="radio" id="Laki" name="gender" value="1"> Pria
+        </label>
+        <label >
+            <input type="radio" id="Perempuan" name="gender" value="0"> Wanita
+        </label>    
+    </form>
+
+    <h4>Apakah Anda Mengalami Exercise</h4>
+    <form id="formAngina">
+        <label>
+            <input type="radio" id="Ya" name="Angina" value="1"> Ya
+        </label>
+        <label >
+            <input type="radio" id="Tidak" name="Angina" value="0"> Tidak
+        </label>    
+    </form>
+</div>
+<div>
+    <h4>Suhu Lingkungan (°C)</h4>
+    <input type="number" id="input1" placeholder="Suhu antara 17 - 36°C">
+    <span id="error-message1" style="color: red;"></span>
+    <h4>Denyut Jantung Maksimum (Max HR)</h4>
+    <input type="number" id="input2" placeholder="Diantara 60 dan 175">
+    <span id="error-message2" style="color: red;"></span>
+    <h2>Tipe Nyeri Dada</h2>
+    <select id="Nyeri">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <div class="tidak-nampak">
+        <h4 id="BPM"></h4>
+        <h4 id="SPO2"></h4>
+    </div>
+</div>
+<a href="http://127.0.0.1:5000/result"></a>
+<button id="tombol">Tekan untuk mendapatkan angka</button>
+
+<div id="hasil"></div>
+{% endblock %}
